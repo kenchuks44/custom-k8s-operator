@@ -195,7 +195,8 @@ make deploy IMG=example/deploymentsync-operator:1.0
 ![Screenshot (1039)](https://github.com/user-attachments/assets/47552d5d-6eff-4c49-9c46-b1e9c23d340a)
 
 ## Step 5: Testing and Validating Operator
-To test and validate the operator, we now create a sample manifest based on new opeator CRD to the cluster as below:
+To test and validate the operator, we now create a sample manifest based on new opeator CRD to the cluster as below. We aim to sync deployments in the default namespace to the "deploymentsync-ns" namespace
+
 ```
 apiVersion: apps.test.com/v1
 kind: DeploymentSync
@@ -217,7 +218,7 @@ spec:
 
 From the screenshot above, we can see the custom resource deployed but no deployment observed yet in the destination namespace, "deploymentsync-ns" where our deployments are synced to.
 
-Now, we create a test nginx deployment in the source namespace, "default" with the manifest file below:
+Now, we create a test nginx deployment in the source namespace, "default" with the manifest file below to observe how deployments are synchronized:
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -247,9 +248,13 @@ spec:
 
 ![Screenshot (1046)](https://github.com/user-attachments/assets/61445d90-0b3c-440a-9729-62124eb5af80)
 
-Additionally, ensure that the service account used by the operator has the necessary RBAC permissions to list, get, watch, create, update, patch, and delete deployments across the cluster. This will allow the operator to perform its intended syncing operations.
+Now, as seen above, we see the nginx deployment synced to the "deploymentsync-ns" namespace. 
+
+Additionally, always ensure that the service account used by the operator has the necessary RBAC permissions to list, get, watch, create, update, patch, and delete deployments across the cluster. This will allow the operator to perform its intended syncing operations.
 
 We have now been able to explore how the DeploymentSync operator simplifies the management of Deployments, facilitating their synchronization across namespaces within a Kubernetes cluster. 
+
+Congratulations!!
 
 
 
