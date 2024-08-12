@@ -195,7 +195,7 @@ make deploy IMG=example/deploymentsync-operator:1.0
 ![Screenshot (1039)](https://github.com/user-attachments/assets/47552d5d-6eff-4c49-9c46-b1e9c23d340a)
 
 ## Step 5: Testing and Validating Operator
-We now create a sample manifest based on new opeator CRD to the cluster as below:
+To test and validate the operator, we now create a sample manifest based on new opeator CRD to the cluster as below:
 ```
 apiVersion: apps.test.com/v1
 kind: DeploymentSync
