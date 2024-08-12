@@ -1,0 +1,14 @@
+apiVersion: apps.test.com/v1
+kind: DeploymentSync
+metadata:
+  labels:
+    app.kubernetes.io/name: deploymentsync
+    app.kubernetes.io/instance: deploymentsync-test
+    app.kubernetes.io/part-of: deploymentsync
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: deploymentsync
+  name: deploymentsync-test
+spec:
+  SourceNamespace: "default"
+  DestinationNamespace: "deploymentsync-ns"
+  DeploymentName: "nginx-deployment"
