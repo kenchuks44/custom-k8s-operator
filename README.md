@@ -8,6 +8,9 @@ Kubernetes Operators entails design patterns for extending Kubernetes functional
 - Custom Controllers: Custom Controllers watch and manage the lifecycle of Custom Resources. They implement the control logic needed to maintain the desired state of the application, including deployment, scaling, and upgrades.
 
 ## Operator Lifecycle
+
+![image](https://github.com/user-attachments/assets/2c275066-0846-4099-8786-564c4ca31805)
+
 The operator’s role is to reconcile the actual state of the application with the desired state by the CRD using a control loop in which it can automatically scale, update, or restart the application. CRDs are used to extend Kubernetes by introducing new types of resources that are not part of the core Kubernetes API. By defining a CRD, users or operators can create their own custom resources and define how those resources should be managed.
 
 ## Why use Kubernetes Operators?
