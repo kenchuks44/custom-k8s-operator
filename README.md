@@ -218,7 +218,7 @@ spec:
 
 From the screenshot above, we can see the custom resource deployed but no deployment observed yet in the destination namespace, "deploymentsync-ns" where our deployments are synced to.
 
-Now, we create a test nginx deployment in the source namespace, "default" with the manifest file below to observe how deployments are synchronized:
+Now, we create a test nginx deployment in the source namespace, "default" with the manifest file below to observe how the operator going into action once it detects a deployment:
 ```
 apiVersion: apps/v1
 kind: Deployment
